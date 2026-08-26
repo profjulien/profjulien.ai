@@ -1,0 +1,6 @@
+# Finder metadata
+.DS_Store
+**/.DS_Store
+# The 30MB camera original — portrait-web.jpg is the processed crop that ships.
+portrait.JPG
+portrait.jpg
