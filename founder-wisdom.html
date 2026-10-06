@@ -1,0 +1,1041 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder wisdom</title>
+<meta name="description" content="A curated shelf of essays and talks on building, chosen and summarised by Prof Julien Salanave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Outfit:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================================
+   profjulien.ai — web surface of the profjulien design system
+   Palette, type and devices inherited from skills/profjulien-design.
+   Radii are 0. No gradients, no shadows, no blur.
+   ============================================================ */
+
+:root{
+  /* base palette — from tokens/colors.css */
+  --pine:#16332D;
+  --limestone:#F2EDE3;
+  --limestone-deep:#E7E0D2;
+  --warm-grey:#A9A296;
+  --warm-grey-40:#D5D1C9;
+  --sage:#6E8F7D;
+  --plum:#6B4E7D;
+  --green:#2E7D5B;
+  --brick:#A8412C;
+
+  /* semantic — light (limestone ground) */
+  --ground:var(--limestone);
+  --panel:var(--limestone-deep);
+  --ink:var(--pine);
+  --muted:#8C857A;
+  --rule:var(--warm-grey-40);
+  --rule-strong:var(--warm-grey);
+  --accent:var(--plum);
+  --affirm:var(--green);
+  --negate:var(--brick);
+
+  --btn-bg:var(--pine);
+  --btn-fg:var(--limestone);
+  --btn-ghost-fg:var(--pine);
+  --btn-hover-bg:var(--plum);
+  --btn-hover-fg:var(--limestone);
+
+  /* inverted band — statement + footer.
+     Always the opposite ground to the page, in either theme. */
+  --invert-bg:var(--pine);
+  --invert-ink:var(--limestone);
+  --invert-muted:rgba(242,237,227,0.58);
+  --invert-rule:rgba(242,237,227,0.20);
+  --invert-at:#B69BC7;
+
+  /* type */
+  --display:Newsreader,"Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:Outfit,"Century Gothic",Futura,"Avenir Next",Corbel,"Trebuchet MS","Segoe UI",sans-serif;
+
+  /* rhythm — 8px base, as in the deck */
+  --gutter:clamp(20px,5vw,72px);
+  --band:clamp(64px,9vw,116px);
+  --max:1180px;
+}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#16332D;
+    --panel:#1E413A;
+    --ink:#F2EDE3;
+    --muted:#A9A296;
+    --rule:rgba(242,237,227,0.16);
+    --rule-strong:rgba(242,237,227,0.34);
+    --accent:#B69BC7;
+    --affirm:#6FBF95;
+    --negate:#DC8067;
+
+    --btn-bg:#F2EDE3;
+    --btn-fg:#16332D;
+    --btn-ghost-fg:#F2EDE3;
+    --btn-hover-bg:#B69BC7;
+    --btn-hover-fg:#16332D;
+
+    --invert-bg:#F2EDE3;
+    --invert-ink:#16332D;
+    --invert-muted:#8C857A;
+    --invert-rule:rgba(22,51,45,0.20);
+    --invert-at:#6B4E7D;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#16332D;
+  --panel:#1E413A;
+  --ink:#F2EDE3;
+  --muted:#A9A296;
+  --rule:rgba(242,237,227,0.16);
+  --rule-strong:rgba(242,237,227,0.34);
+  --accent:#B69BC7;
+  --affirm:#6FBF95;
+  --negate:#DC8067;
+
+  --btn-bg:#F2EDE3;
+  --btn-fg:#16332D;
+  --btn-ghost-fg:#F2EDE3;
+  --btn-hover-bg:#B69BC7;
+  --btn-hover-fg:#16332D;
+
+  --invert-bg:#F2EDE3;
+  --invert-ink:#16332D;
+  --invert-muted:#8C857A;
+  --invert-rule:rgba(22,51,45,0.20);
+  --invert-at:#6B4E7D;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{color:inherit}
+img,svg{max-width:100%}
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+.skip{
+  position:absolute;left:-9999px;top:0;
+  background:var(--btn-bg);color:var(--btn-fg);
+  padding:12px 20px;z-index:20;font-size:14px;
+}
+.skip:focus{left:0}
+
+/* ---------- shared furniture ---------- */
+
+.wrap{
+  width:100%;max-width:var(--max);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.band{padding-block:var(--band)}
+.band + .band{border-top:1px solid var(--rule)}
+
+.eyebrow{
+  font-size:12px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);margin:0;
+}
+
+.rule{
+  width:220px;height:2px;border:0;margin:32px 0;
+  background:var(--ink);
+}
+
+h1,h2,h3{
+  font-family:var(--display);font-weight:400;
+  letter-spacing:-0.015em;text-wrap:balance;margin:0;
+}
+h1{font-size:clamp(2.2rem,4.5vw,3.5rem);line-height:1.02;letter-spacing:-0.025em}
+h2{font-size:clamp(1.85rem,3.3vw,2.7rem);line-height:1.1}
+h3{font-size:1.35rem;line-height:1.25}
+
+p{margin:0}
+.lede{font-size:clamp(1.05rem,1.5vw,1.2rem);max-width:56ch;color:var(--ink)}
+.body{max-width:62ch;color:var(--ink)}
+.muted{color:var(--muted)}
+.source{
+  font-size:13px;letter-spacing:.03em;color:var(--muted);
+}
+.accent{color:var(--accent)}
+.inline-link{
+  color:var(--accent);text-decoration:none;
+  border-bottom:1px solid var(--accent);padding-bottom:1px;
+}
+.inline-link:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+.stack{display:flex;flex-direction:column}
+.g1{gap:8px}.g2{gap:16px}.g3{gap:24px}.g4{gap:32px}.g5{gap:48px}.g6{gap:64px}
+
+.section-head{
+  display:flex;flex-direction:column;gap:16px;
+  margin-bottom:56px;
+}
+
+/* ---------- wordmark ---------- */
+
+.mark{
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  letter-spacing:.06em;color:var(--muted);
+  text-decoration:none;white-space:nowrap;
+}
+.mark .at{color:var(--accent)}
+.mark:hover{color:var(--ink)}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--sans);font-size:15px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;
+  padding:15px 26px;border-radius:0;
+  text-decoration:none;border:1px solid transparent;
+  transition:background-color .16s linear,color .16s linear,border-color .16s linear;
+}
+.btn--solid{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+.btn--solid:hover{background:var(--btn-hover-bg);border-color:var(--btn-hover-bg);color:var(--btn-hover-fg)}
+.btn--ghost{color:var(--btn-ghost-fg);border-color:var(--rule-strong)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btn .arrow{display:block;width:18px;height:8px;flex:none}
+
+.btn-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+
+/* ---------- header ---------- */
+
+.site-head{
+  position:sticky;top:0;z-index:10;
+  background:var(--ground);
+  border-bottom:1px solid var(--rule);
+}
+.site-head .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;height:66px;
+}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{
+  font-size:14px;font-weight:500;letter-spacing:.04em;
+  text-decoration:none;color:var(--muted);
+  padding-block:4px;border-bottom:1px solid transparent;
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.nav a.is-here{color:var(--ink);border-bottom-color:var(--accent)}
+.nav a.nav-cta{color:var(--ink);border-bottom-color:var(--rule-strong)}
+.nav a.nav-cta:hover{color:var(--accent);border-bottom-color:var(--accent)}
+@media (max-width:860px){.nav a:not(.nav-cta){display:none}}
+
+/* ---------- hero ---------- */
+
+.hero{padding-block:clamp(56px,8vw,104px) clamp(56px,8vw,96px)}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,1fr);
+  gap:clamp(40px,6vw,80px);align-items:center;
+}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:56px}
+}
+.speaker{
+  display:flex;flex-direction:column;gap:10px;
+  font-size:clamp(1rem,1.4vw,1.1rem);max-width:46ch;
+}
+.speaker strong{font-weight:600}
+.speaker p + p{color:var(--muted)}
+
+.chart figcaption{margin-top:20px;max-width:46ch}
+.chart svg{display:block;width:100%;height:auto}
+.wui-line{
+  fill:none;stroke:var(--ink);stroke-width:2.25;
+  stroke-linejoin:round;stroke-linecap:round;
+}
+.wui-axis{stroke:var(--rule-strong);stroke-width:1.5}
+.wui-tick{stroke:var(--negate);stroke-width:1.5;stroke-dasharray:4 5}
+.wui-dot{fill:var(--negate)}
+.wui-label{
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  letter-spacing:.04em;fill:var(--negate);
+}
+.wui-year{
+  font-family:var(--sans);font-size:12px;font-weight:500;
+  letter-spacing:.1em;fill:var(--muted);
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .wui-line{
+    stroke-dasharray:1000;stroke-dashoffset:1000;
+    animation:draw 2.1s cubic-bezier(.2,.7,.3,1) .25s forwards;
+  }
+  .wui-event{opacity:0;animation:fade .5s linear 1.9s forwards}
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+
+/* ---------- statement band ---------- */
+
+.statement{
+  background:var(--invert-bg);color:var(--invert-ink);
+  padding-block:clamp(88px,12vw,150px);
+  border-top:0;
+}
+.statement q{quotes:none}
+.statement-q{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2rem,4.6vw,3.6rem);
+  line-height:1.06;letter-spacing:-0.02em;
+  text-wrap:balance;max-width:19ch;margin:0;
+}
+.statement-note{
+  color:var(--invert-muted);font-size:15px;
+  letter-spacing:.04em;margin-top:36px;
+}
+
+/* ---------- thesis claim ---------- */
+
+.thesis-claim{
+  font-family:var(--display);font-size:clamp(1.6rem,3.2vw,2.6rem);
+  line-height:1.14;letter-spacing:-0.015em;text-wrap:balance;
+  max-width:20ch;margin:0 0 40px;
+}
+
+/* ---------- three-column teaching table ---------- */
+
+.cols{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+.col{
+  padding:0 clamp(20px,2.6vw,40px);
+  border-left:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:18px;
+}
+.col:first-child{padding-left:0;border-left:0}
+.col:last-child{padding-right:0}
+.col-label{
+  font-family:var(--sans);font-size:12px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+}
+.col h3{font-family:var(--display)}
+.col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.col li{
+  font-size:15.5px;line-height:1.45;color:var(--ink);
+  padding-top:10px;border-top:1px solid var(--rule);
+}
+.col-where{
+  font-size:13px;letter-spacing:.03em;color:var(--muted);
+  margin-top:auto;padding-top:8px;line-height:1.5;
+}
+.col-where{display:flex;flex-wrap:wrap;column-gap:.45em;row-gap:2px}
+.col-where span{white-space:nowrap}
+.col-where span + span::before{content:"·";margin-right:.45em}
+@media (max-width:860px){
+  .cols{grid-template-columns:minmax(0,1fr);gap:44px}
+  .col{padding:0;border-left:0}
+}
+
+/* ---------- numbered arc ---------- */
+
+.arc{display:flex;flex-direction:column}
+.arc-item{
+  display:grid;grid-template-columns:64px minmax(0,1fr);
+  gap:clamp(16px,3vw,40px);
+  padding-block:32px;border-top:1px solid var(--rule);
+  align-items:start;
+}
+.arc-item:last-child{border-bottom:1px solid var(--rule)}
+.arc-num{
+  font-family:var(--sans);font-size:26px;font-weight:500;
+  color:var(--muted);line-height:1.1;font-variant-numeric:tabular-nums;
+}
+.arc-item--now .arc-num{color:var(--accent)}
+.arc-head{
+  font-family:var(--display);font-size:clamp(1.3rem,2.2vw,1.75rem);
+  line-height:1.2;margin:0 0 8px;
+}
+.arc-item--now .arc-head{color:var(--accent)}
+.arc-body{max-width:58ch;color:var(--muted);font-size:16px}
+@media (max-width:600px){
+  .arc-item{grid-template-columns:minmax(0,1fr);gap:10px}
+}
+
+/* ---------- office hours ---------- */
+
+.hours{background:var(--panel)}
+.hours-grid{
+  display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1fr);
+  gap:clamp(40px,6vw,72px);align-items:start;
+}
+@media (max-width:860px){.hours-grid{grid-template-columns:minmax(0,1fr);gap:48px}}
+
+/* Image treatment, per the deck: saturate .82 / contrast 1.04 / brightness .99,
+   a 6% pine veil, a 1px warm-grey border, 2px radius. The deck bakes this into
+   the pixels at build time; here it stays live so the file can be swapped. */
+.portrait{margin:0}
+.portrait figcaption{margin-top:14px}
+.portrait-frame{
+  position:relative;aspect-ratio:6/5;overflow:hidden;
+  border:1px solid var(--rule-strong);border-radius:2px;
+  background:var(--ground);
+}
+.portrait-frame img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;
+  filter:saturate(.82) contrast(1.04) brightness(.99);
+}
+.portrait-frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:rgba(22,51,45,0.06);
+}
+.rows{display:flex;flex-direction:column;width:100%}
+.row{
+  display:grid;grid-template-columns:132px minmax(0,1fr);
+  gap:24px;padding-block:18px;
+  border-top:1px solid var(--rule-strong);
+  align-items:baseline;
+}
+.row:last-child{border-bottom:1px solid var(--rule-strong)}
+.row dt{
+  font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0;
+}
+.row dd{margin:0;font-size:16.5px;line-height:1.5}
+@media (max-width:520px){
+  .row{grid-template-columns:minmax(0,1fr);gap:6px}
+}
+
+/* ---------- working together ---------- */
+
+.offers{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+.offer{
+  padding:28px clamp(20px,2.6vw,40px) 0;
+  border-top:2px solid var(--ink);
+  display:flex;flex-direction:column;gap:12px;
+}
+.offer:first-child{padding-left:0}
+.offer:last-child{padding-right:0}
+.offer h3{font-family:var(--display)}
+.offer p{font-size:15.5px;color:var(--muted);line-height:1.5}
+@media (max-width:860px){
+  .offers{grid-template-columns:minmax(0,1fr);gap:36px}
+  .offer{padding-inline:0}
+}
+
+/* ---------- writing (empty state) ---------- */
+
+.slots{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(20px,2.6vw,32px);
+}
+.slot{
+  border:1px dashed var(--rule-strong);
+  padding:28px 24px;min-height:180px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:24px;
+}
+.slot-chip{
+  align-self:flex-start;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--rule-strong);padding:5px 10px;
+}
+.slot-topic{
+  font-family:var(--display);font-size:1.2rem;line-height:1.25;color:var(--muted);
+}
+@media (max-width:860px){.slots{grid-template-columns:minmax(0,1fr)}.slot{min-height:0}}
+
+/* ---------- footer ---------- */
+
+.site-foot{
+  background:var(--invert-bg);color:var(--invert-ink);
+  padding-block:clamp(64px,8vw,96px) 40px;
+}
+.foot-mark{
+  font-family:var(--sans);font-weight:500;
+  font-size:clamp(2rem,5.2vw,3.6rem);
+  letter-spacing:-0.01em;line-height:1;
+  color:var(--invert-ink);text-decoration:none;display:inline-block;
+}
+.foot-mark .at{color:var(--invert-at)}
+.foot-links{
+  display:flex;flex-wrap:wrap;gap:12px 40px;
+  padding-top:32px;margin-top:48px;
+  border-top:1px solid var(--invert-rule);
+}
+.foot-links a{
+  font-size:15px;letter-spacing:.03em;color:var(--invert-ink);
+  text-decoration:none;border-bottom:1px solid var(--invert-rule);
+  padding-bottom:2px;
+}
+.foot-links a:hover{border-bottom-color:var(--invert-ink)}
+.foot-fine{
+  margin-top:40px;font-size:13px;letter-spacing:.04em;
+  color:var(--invert-muted);
+}
+
+/* ---------- action cards — a button that can carry a second line ---------- */
+
+.actions{display:flex;flex-wrap:wrap;gap:0;margin-top:40px;border-top:1px solid var(--rule)}
+.action{
+  display:flex;align-items:flex-start;gap:16px;
+  flex:1 1 240px;min-width:0;
+  padding:22px 24px 22px 0;
+  border-bottom:1px solid var(--rule);
+  text-decoration:none;color:var(--ink);
+  transition:background-color .16s linear;
+}
+.action + .action{padding-left:24px;border-left:1px solid var(--rule)}
+.action:hover{background:var(--panel)}
+.action-mark{flex:none;width:26px;height:26px;margin-top:2px;color:var(--accent)}
+.action-title{
+  font-family:var(--sans);font-size:15px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;display:block;
+}
+.action-sub{
+  display:block;margin-top:6px;font-size:14.5px;line-height:1.4;color:var(--muted);
+}
+.action:hover .action-title{color:var(--accent)}
+.action-go{margin-left:auto;align-self:center;width:18px;height:8px;flex:none;color:var(--muted)}
+.action:hover .action-go{color:var(--accent)}
+@media (max-width:560px){
+  .action + .action{padding-left:0;border-left:0}
+  .action{flex-basis:100%}
+}
+
+.quiet-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px}
+.quiet-links a{
+  font-size:14.5px;letter-spacing:.03em;color:var(--muted);text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.quiet-links a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* ---------- chart instrument: hover readout + replay ---------- */
+
+.chart-foot{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:24px;margin-top:20px;
+}
+.chart-foot .source{margin:0;max-width:46ch}
+.replay{
+  flex:none;font-family:var(--sans);font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);background:none;
+  border:1px solid var(--rule);border-radius:0;padding:7px 12px;cursor:pointer;
+  transition:color .16s linear,border-color .16s linear;
+}
+.replay:hover{color:var(--ink);border-color:var(--rule-strong)}
+
+.wui-hit{fill:transparent;cursor:crosshair}
+.wui-scrub{stroke:var(--rule-strong);stroke-width:1;opacity:0}
+.wui-cursor{fill:var(--accent);opacity:0}
+.chart.is-reading .wui-scrub,.chart.is-reading .wui-cursor{opacity:1}
+.wui-readout{
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  letter-spacing:.03em;fill:var(--ink);opacity:0;
+}
+.chart.is-reading .wui-readout{opacity:1}
+.chart.is-reading .wui-event{opacity:.28}
+
+/* ---------- scroll cue ---------- */
+
+.scroll-cue{
+  display:flex;align-items:center;gap:12px;justify-content:center;
+  margin-top:clamp(40px,6vw,72px);
+  font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+.scroll-cue:hover{color:var(--ink)}
+.scroll-cue svg{width:10px;height:22px}
+@media (prefers-reduced-motion:no-preference){
+  .scroll-cue svg{animation:nudge 2.4s ease-in-out infinite}
+}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---------- paged section: tab strip, counter, pager ---------- */
+
+.pager-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;margin-bottom:28px;
+}
+.counter{
+  font-family:var(--sans);font-size:13px;letter-spacing:.14em;
+  color:var(--muted);font-variant-numeric:tabular-nums;flex:none;
+}
+.tabs{
+  display:flex;gap:0;overflow-x:auto;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin-bottom:48px;scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;background:none;border:0;border-radius:0;cursor:pointer;
+  font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.04em;
+  color:var(--muted);padding:14px 22px;white-space:nowrap;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .16s linear,border-color .16s linear;
+}
+.tab:first-child{padding-left:0}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+.panel[hidden]{display:none}
+.panel-grid{
+  display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+  gap:clamp(32px,5vw,64px);align-items:start;
+}
+@media (max-width:860px){.panel-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+.panel-eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.panel h3{
+  font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.1rem);
+  line-height:1.15;margin:0 0 16px;
+}
+.panel-body{font-size:16.5px;line-height:1.55;color:var(--muted);max-width:52ch}
+
+.figs{display:flex;flex-wrap:wrap;gap:0;margin-top:32px;border-top:2px solid var(--ink)}
+.fig{flex:1 1 150px;min-width:0;padding:20px 24px 0 0}
+.fig + .fig{padding-left:24px;border-left:1px solid var(--rule)}
+.fig-n{
+  font-family:var(--display);font-size:clamp(2rem,3.4vw,2.9rem);
+  line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;
+}
+.fig--accent .fig-n{color:var(--accent)}
+.fig-l{margin-top:10px;font-size:13.5px;line-height:1.35;color:var(--muted)}
+
+.pager{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
+}
+.pager button{
+  background:none;border:0;border-radius:0;cursor:pointer;padding:6px 0;
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);
+}
+.pager button:hover{color:var(--accent)}
+.pager .upnext{font-size:14px;color:var(--muted);text-align:center;flex:1;min-width:0}
+.pager .upnext b{font-weight:500;color:var(--ink)}
+
+/* ---------- founder wisdom ---------- */
+
+.fw-list{display:flex;flex-direction:column}
+.fw{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);
+  gap:clamp(20px,4vw,56px);
+  padding-block:28px;border-top:1px solid var(--rule);
+  align-items:start;text-decoration:none;color:var(--ink);
+}
+.fw:last-child{border-bottom:1px solid var(--rule)}
+.fw:hover{background:var(--panel)}
+.fw-t{font-family:var(--display);font-size:1.3rem;line-height:1.2;margin:0}
+.fw:hover .fw-t{color:var(--accent)}
+.fw-by{margin-top:8px;font-size:13.5px;letter-spacing:.03em;color:var(--muted)}
+.fw-take{font-size:16px;line-height:1.5;color:var(--muted);margin:0}
+.fw-tag{
+  display:inline-block;margin-top:12px;font-size:11px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--rule-strong);padding:4px 9px;
+}
+@media (max-width:700px){.fw{grid-template-columns:minmax(0,1fr);gap:12px}}
+</style>
+
+<style>
+.fw--nolink{cursor:default}
+.fw--nolink:hover{background:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}
+.chip{
+  background:none;border:1px solid var(--rule);border-radius:0;cursor:pointer;
+  font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.04em;
+  color:var(--muted);padding:9px 14px;
+  transition:color .16s linear,border-color .16s linear,background-color .16s linear;
+}
+.chip:hover{color:var(--ink);border-color:var(--rule-strong)}
+.chip[aria-pressed="true"]{color:var(--invert-ink);background:var(--ink);border-color:var(--ink)}
+.chip-n{font-variant-numeric:tabular-nums;opacity:.6;margin-left:4px}
+.fw[hidden],.fw--nolink[hidden]{display:none}
+.backlink{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+.backlink:hover{color:var(--accent)}
+.empty-note{margin-top:40px;font-size:14px;color:var(--muted)}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="mark" href="index.html"><span class="at">@</span>profjulien.ai</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html#teaching">Teaching</a>
+      <a href="index.html#programmes">Programmes</a>
+      <a href="index.html#arc">Track record</a>
+      <a href="index.html#together">Working together</a>
+      <a class="nav-cta" href="https://calendly.com/profjulien/officehour">Book an office hour</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="band" id="top">
+    <div class="wrap">
+      <a class="backlink" href="index.html">&#8592; profjulien.ai</a>
+      <div class="pager-head">
+        <div class="stack g2">
+          <p class="eyebrow">Founder wisdom</p>
+          <h1 style="font-size:clamp(2rem,4vw,3.1rem)">What I send people, and why.</h1>
+        </div>
+        <p class="counter">34 entries &nbsp;·&nbsp; 12 themes</p>
+      </div>
+      <p class="lede muted" style="max-width:62ch;margin-bottom:40px">Essays and talks worth the
+        hour, kept because I keep sending them. Each one carries the line I would actually say
+        about it. The themes follow a founder's sequence, from still considering it through to
+        the quieter problem of success.</p>
+
+      <div class="chips" role="group" aria-label="Filter by theme">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="chip-n">34</span></button>
+        <button class="chip" type="button" data-filter="Considering" aria-pressed="false">Considering <span class="chip-n">6</span></button>
+        <button class="chip" type="button" data-filter="Getting started" aria-pressed="false">Starting <span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-filter="Struggling" aria-pressed="false">Struggling <span class="chip-n">1</span></button>
+        <button class="chip" type="button" data-filter="Iterating" aria-pressed="false">Iterating <span class="chip-n">1</span></button>
+        <button class="chip" type="button" data-filter="PMF" aria-pressed="false">Product–market fit <span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-filter="Scaling" aria-pressed="false">Scaling <span class="chip-n">3</span></button>
+        <button class="chip" type="button" data-filter="Success" aria-pressed="false">Success <span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-filter="Career" aria-pressed="false">Career <span class="chip-n">5</span></button>
+        <button class="chip" type="button" data-filter="Life" aria-pressed="false">Life <span class="chip-n">7</span></button>
+        <button class="chip" type="button" data-filter="Luck" aria-pressed="false">Skill vs. luck <span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-filter="Decision-making" aria-pressed="false">Decision-making <span class="chip-n">2</span></button>
+        <button class="chip" type="button" data-filter="Tools" aria-pressed="false">Tools <span class="chip-n">1</span></button>
+      </div>
+
+      <div class="fw-list" id="fw-list">
+        <a class="fw" data-tag="Considering" href="http://paulgraham.com/startupideas.html" rel="noopener">
+          <div>
+            <p class="fw-t">How to get startup ideas</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">The way to get good startup ideas is to look for a problem, preferably one you have yourself, and that is not obvious to people who don&#x27;t have it.</p>
+        </a>
+        <a class="fw" data-tag="Considering" href="https://youtu.be/Lp619Sl38eo?t=2816" rel="noopener">
+          <div>
+            <p class="fw-t">How to know if a startup idea is good</p>
+            <p class="fw-by">Marc Andreessen &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">Most of the obviously good ideas are bad ideas for startups because large companies are already pursuing them. A good idea for a startup has to be contrarian, non obvious, yet right.</p>
+        </a>
+        <a class="fw" data-tag="Considering" href="http://www.paulgraham.com/before.html" rel="noopener">
+          <div>
+            <p class="fw-t">Before the startup</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">You shouldn&#x27;t know a lot about startups in order to start one, gaming the system won&#x27;t work, it will consume all your life especially if you&#x27;re successful, you shouldn&#x27;t start one during college, you can&#x27;t tell who is going to be successful at it.</p>
+        </a>
+        <a class="fw" data-tag="Considering" href="https://youtu.be/JuNOFW-oVn8?t=49" rel="noopener">
+          <div>
+            <p class="fw-t">The nothing to lose advantage</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">When you start, you have nothing to lose, can take more risks and execute faster. What then prevents people from starting? While they objectively have nothing to lose, they subjectively fear what their mum, friend or colleague are going to think about them in the future if they fail.</p>
+        </a>
+        <a class="fw" data-tag="Considering" href="https://cdixon.org/2013/08/04/the-idea-maze" rel="noopener">
+          <div>
+            <p class="fw-t">The idea maze</p>
+            <p class="fw-by">Chris Dixon &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">A good idea is a map of every turn the market has already punished. The founder worth backing has walked the maze and knows which doors are shut.</p>
+        </a>
+        <a class="fw" data-tag="Considering" href="https://blog.southparkcommons.com/what-is-negative-1-to-0/" rel="noopener">
+          <div>
+            <p class="fw-t">What is -1 to 0? A philosophy of ideation</p>
+            <p class="fw-by">South Park Commons &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Considering</span>
+          </div>
+          <p class="fw-take">Before zero to one there is minus one to zero: the unglamorous search for a problem worth committing to. Conviction and certainty are not the same thing.</p>
+        </a>
+        <a class="fw" data-tag="Getting started" href="https://youtu.be/YHc6dAPXOgM?t=966" rel="noopener">
+          <div>
+            <p class="fw-t">100 happy users</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Starting</span>
+          </div>
+          <p class="fw-take">Build something 100 happy users can&#x27;t do without rather than something that a large number of people vaguely enjoy.</p>
+        </a>
+        <a class="fw" data-tag="Getting started" href="https://youtu.be/--APdD6vejI?t=237" rel="noopener">
+          <div>
+            <p class="fw-t">Facebook early adoption</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Starting</span>
+          </div>
+          <p class="fw-take">Some very successful founders are not born ambitious, they build it over time. See the Mark Zuckerberg example.</p>
+        </a>
+        <a class="fw" data-tag="Struggling" href="http://www.paulgraham.com/die.html" rel="noopener">
+          <div>
+            <p class="fw-t">How not to die</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Struggling</span>
+          </div>
+          <p class="fw-take">Startups mostly die when the founders give up. Survive long enough and the odds turn in your favour.</p>
+        </a>
+        <a class="fw" data-tag="Iterating" href="https://review.firstround.com/the-minimum-viable-testing-process-for-evaluating-startup-ideas" rel="noopener">
+          <div>
+            <p class="fw-t">The minimum viable testing process for evaluating startup ideas</p>
+            <p class="fw-by">First Round Review &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Iterating</span>
+          </div>
+          <p class="fw-take">Instead of throwing out an MVP as soon as possible to see what sticks, start by testing critical assumptions.</p>
+        </a>
+        <a class="fw" data-tag="PMF" href="https://www.lennysnewsletter.com/p/finding-product-market-fit" rel="noopener">
+          <div>
+            <p class="fw-t">Finding product market fit</p>
+            <p class="fw-by">Lenny Rachitsky &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Product–market fit</span>
+          </div>
+          <p class="fw-take">Product-market fit is felt before it is measured. The signal is pull you cannot keep up with, not a metric you have to squint at.</p>
+        </a>
+        <a class="fw" data-tag="PMF" href="https://youtu.be/BjVGaq0h8vA?si=TKvGI1O2Z9mdtvt8&amp;t=949" rel="noopener">
+          <div>
+            <p class="fw-t">What product market fit looks like</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Product–market fit</span>
+          </div>
+          <p class="fw-take">The Coinbase example.</p>
+        </a>
+        <a class="fw" data-tag="Scaling" href="https://youtu.be/kWnKLUesjV4" rel="noopener">
+          <div>
+            <p class="fw-t">Wartime vs. peacetime CEO</p>
+            <p class="fw-by">Ben Horowitz &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Scaling</span>
+          </div>
+          <p class="fw-take">Peacetime grows the opportunity, wartime survives the threat. The same person has to be able to switch, and most cannot.</p>
+        </a>
+        <a class="fw" data-tag="Scaling" href="https://youtu.be/j7tr3IlH5Ro" rel="noopener">
+          <div>
+            <p class="fw-t">How to manage a startup?</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Scaling</span>
+          </div>
+          <p class="fw-take">Especially from 26:32, the story of Toussaint L&#x27;Ouverture and his management style — he conquered the enemy by incorporating them into his army — and the implications for building a company culture. It is not your perspective or the perspective of the person you are talking to at the moment that matters. You must consider the people who are in the room. They are the company, they are the culture.</p>
+        </a>
+        <div class="fw fw--nolink" data-tag="Scaling">
+          <div>
+            <p class="fw-t">Four stages of business growth</p>
+            <p class="fw-by">Alex Hormozi &nbsp;·&nbsp; no link yet</p>
+            <span class="fw-tag">Scaling</span>
+          </div>
+          <p class="fw-take">Each stage has a distinct challenge.</p>
+        </div>
+        <div class="fw fw--nolink" data-tag="Success">
+          <div>
+            <p class="fw-t">The many worlds of enough</p>
+            <p class="fw-by">no link yet</p>
+            <span class="fw-tag">Success</span>
+          </div>
+          <p class="fw-take">On the interplay between ambition, greed, settling for enough and self awareness. Settling for enough is elusive because when we reach a certain enough, we are no longer the person that once desired it. Ambition to become a better person has pushed us to evolve our identity and moved the goal post of enough upwards. Byproducts we also get from that process are bumps in salary, status, power or reputation. Once these byproducts become our primary desires, ambition turns to greed and it is time for course correction towards a lower enough through increased self awareness.</p>
+        </div>
+        <a class="fw" data-tag="Success" href="https://youtu.be/RdAKXJlMIZM?t=1845" rel="noopener">
+          <div>
+            <p class="fw-t">Success is boring</p>
+            <p class="fw-by">talk</p>
+            <span class="fw-tag">Success</span>
+          </div>
+          <p class="fw-take">We entered into entrepreneurship by jumping into the next thing. But this lesson we then need to unlearn, to focus and stick on what we&#x27;re doing.</p>
+        </a>
+        <a class="fw" data-tag="Career" href="http://www.paulgraham.com/greatwork.html" rel="noopener">
+          <div>
+            <p class="fw-t">How to do great work</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Career</span>
+          </div>
+          <p class="fw-take">Great work is neither accidental nor the result of step-by-step career planning. It emerges when you combine aptitude with deep personal fascination and chase the intriguing gaps at the frontiers of knowledge. Curiosity is the engine, hard focused effort is the fuel, and a readiness to ignore fashion, break implicit rules and keep iterating small versions is the method.</p>
+        </a>
+        <a class="fw" data-tag="Career" href="https://youtu.be/3Fx5Q8xGU8k?si=gPSl7v9txMthjQOV&amp;t=2224" rel="noopener">
+          <div>
+            <p class="fw-t">Competition is for losers</p>
+            <p class="fw-by">Peter Thiel &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Career</span>
+          </div>
+          <p class="fw-take">We seek competition, in education, startups, sport, for validation because we are mimetic. Yet our success in business, career and life depends on avoiding it.</p>
+        </a>
+        <a class="fw" data-tag="Career" href="https://youtu.be/uaSqh4DiQSw?t=507" rel="noopener">
+          <div>
+            <p class="fw-t">Don&#x27;t follow your passion</p>
+            <p class="fw-by">Ben Horowitz &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Career</span>
+          </div>
+          <p class="fw-take">Why following your passion is not the best compass for figuring out your career. Passions are difficult to prioritize, passions evolve over time, passions are not necessarily where you are most skilled, passions are very me-centric. Follow your contribution instead.</p>
+        </a>
+        <a class="fw" data-tag="Career" href="https://fictivekin.github.io/pmarchive-jekyll//guide_to_career_planning_part1.html" rel="noopener">
+          <div>
+            <p class="fw-t">Guide to career planning</p>
+            <p class="fw-by">Marc Andreessen &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Career</span>
+          </div>
+          <p class="fw-take">First rule of career planning: do not plan your career. Focus instead on creating a portfolio of opportunities.</p>
+        </a>
+        <a class="fw" data-tag="Career" href="https://youtu.be/LH1bewTg-P4" rel="noopener">
+          <div>
+            <p class="fw-t">How to win?</p>
+            <p class="fw-by">Daniel Gross &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Career</span>
+          </div>
+          <p class="fw-take">What lifestyle do you need to sustain being an efficient founder, that is, to work hard and smart?</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://paulgraham.com/think.html" rel="noopener">
+          <div>
+            <p class="fw-t">How to think for yourself</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">In most work it is enough to be right. In founding, investing and research you have to be right where everyone else is wrong, so the thing to train is independent-mindedness, not accuracy.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://medium.com/incerto/how-to-legally-own-another-person-4145a1802bf6" rel="noopener">
+          <div>
+            <p class="fw-t">How to legally own another person</p>
+            <p class="fw-by">Nassim Nicholas Taleb &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">The three most harmful addictions are heroin, carbohydrates, and a monthly salary.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://philosophyinhell.substack.com/p/instead-of-your-lifes-purpose/" rel="noopener">
+          <div>
+            <p class="fw-t">Instead of your life&#x27;s purpose</p>
+            <p class="fw-by">Philosophy in Hell &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">There is a common misperception of what makes life meaningful: the idea that we have a special purpose and that once we find it, all our confusion ends. An alternate non-linear approach is premised on the idea that life is full of randomness punctuated by sudden moments, crises and opportunities, with vast potential for meaning making, when our skills and virtues shine.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://youtu.be/aWhNQjW6Luk?t=4353" rel="noopener">
+          <div>
+            <p class="fw-t">Life is a paradox to be experienced</p>
+            <p class="fw-by">Derek Sivers &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">Life is full of inherent tensions that can take us in opposing directions, safety versus novelty for instance. It can be navigated more smoothly by reframing either/or as both/and. Your life becomes a symphony if you make room and time for each of these conflicting forces rather than try to pick one while suppressing the other.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://www.youtube.com/watch?v=A98s9CqUM0w" rel="noopener">
+          <div>
+            <p class="fw-t">The art of transformation</p>
+            <p class="fw-by">Rich Roll &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">Transformation runs neither straight nor logical. It is a dance between deciding and being changed by what the decision costs.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://www.youtube.com/watch?v=6aTaoGWjMvI" rel="noopener">
+          <div>
+            <p class="fw-t">The good enough life choice</p>
+            <p class="fw-by">Derek Sivers &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">Life is choice. Good enough, chosen on purpose, beats optimal chosen never.</p>
+        </a>
+        <a class="fw" data-tag="Life" href="https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness" rel="noopener">
+          <div>
+            <p class="fw-t">What makes a good life?</p>
+            <p class="fw-by">Robert Waldinger &nbsp;·&nbsp; TED talk</p>
+            <span class="fw-tag">Life</span>
+          </div>
+          <p class="fw-take">The longest study on happiness lands on one variable: the quality of your relationships. Not achievement, not money.</p>
+        </a>
+        <a class="fw" data-tag="Luck" href="https://www.youtube.com/watch?v=iZM_JmZdqCw" rel="noopener">
+          <div>
+            <p class="fw-t">You&#x27;re not a lottery ticket</p>
+            <p class="fw-by">Peter Thiel &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Skill vs. luck</span>
+          </div>
+          <p class="fw-take">The role of luck in entrepreneurial and life success is overrated. We can build a startup, and a life, where we construct the future and good or bad luck is something we deal with along the way — a determinate future — rather than a world where luck stops all thinking and action before we even start.</p>
+        </a>
+        <a class="fw" data-tag="Luck" href="https://www.luca-dellanna.com/musk-luck/" rel="noopener">
+          <div>
+            <p class="fw-t">Did Elon Musk get lucky? Skill, luck and imitation</p>
+            <p class="fw-by">Luca Dellanna &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Skill vs. luck</span>
+          </div>
+          <p class="fw-take">The skill-luck tradeoff for outcomes: if you don&#x27;t take extreme risks, even if you&#x27;re the most skilled person, you will be outperformed by someone who did. And if you take extreme risks, you will have worse average outcomes than if you didn&#x27;t. Competing for first place often means using strategies that reduce your average outcome.</p>
+        </a>
+        <a class="fw" data-tag="Decision-making" href="https://econwpa.ub.uni-muenchen.de/econ-wp/mic/papers/0012/0012002.pdf" rel="noopener">
+          <div>
+            <p class="fw-t">Choice and procrastination</p>
+            <p class="fw-by">Ted O&#x27;Donoghue &amp; Matthew Rabin &nbsp;·&nbsp; paper</p>
+            <span class="fw-tag">Decision-making</span>
+          </div>
+          <p class="fw-take">More options make a decision costlier, so we defer it. Procrastination is often a symptom of too much choice rather than too little will.</p>
+        </a>
+        <div class="fw fw--nolink" data-tag="Decision-making">
+          <div>
+            <p class="fw-t">Systems thinking and education</p>
+            <p class="fw-by">Russell Ackoff &nbsp;·&nbsp; no link yet</p>
+            <span class="fw-tag">Decision-making</span>
+          </div>
+          <p class="fw-take">Education improves by changing the system, not by polishing its parts. Doing the wrong thing better only takes you further from right.</p>
+        </div>
+        <a class="fw" data-tag="Tools" href="https://readwise.io/i/julien621" rel="noopener">
+          <div>
+            <p class="fw-t">Readwise</p>
+            <p class="fw-by">tool</p>
+            <span class="fw-tag">Tools</span>
+          </div>
+          <p class="fw-take">To compound knowledge from what you read, you need a process. Readwise works because it simplifies how you capture your reading highlights from any source and delivers spaced repetition of those highlights so you remember them.</p>
+        </a>
+      </div>
+
+      <p class="empty-note" data-empty hidden>Nothing filed under that theme yet.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="foot-mark" href="index.html"><span class="at">@</span>profjulien.ai</a>
+    <div class="foot-links">
+      <a href="mailto:hello@profjulien.ai">hello@profjulien.ai</a>
+      <a href="https://calendly.com/profjulien/officehour">Book an office hour</a>
+      <a href="https://www.linkedin.com/in/profjulien">LinkedIn</a>
+      <a href="index.html">Home</a>
+    </div>
+    <p class="foot-fine">Julien Salanave &#8212; ESSEC Business School, Singapore. Every link goes
+      to the original; the words beneath each title are mine.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const chips = [...document.querySelectorAll(".chip")];
+  const items = [...document.querySelectorAll("#fw-list .fw")];
+  const empty = document.querySelector("[data-empty]");
+  chips.forEach(c => c.addEventListener("click", () => {
+    const f = c.dataset.filter;
+    chips.forEach(o => o.setAttribute("aria-pressed", o === c));
+    let shown = 0;
+    items.forEach(it => {
+      const on = f === "all" || it.dataset.tag === f;
+      it.hidden = !on;
+      if (on) shown++;
+    });
+    empty.hidden = shown > 0;
+    history.replaceState(null, "", f === "all" ? location.pathname : "#" + encodeURIComponent(f));
+  }));
+  const want = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if (want) chips.find(c => c.dataset.filter === want)?.click();
+})();
+</script>
