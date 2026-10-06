@@ -235,6 +235,7 @@ p{margin:0}
   padding-block:4px;border-bottom:1px solid transparent;
 }
 .nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.nav a.is-here{color:var(--ink);border-bottom-color:var(--accent)}
 .nav a.nav-cta{color:var(--ink);border-bottom-color:var(--rule-strong)}
 .nav a.nav-cta:hover{color:var(--accent);border-bottom-color:var(--accent)}
 @media (max-width:860px){.nav a:not(.nav-cta){display:none}}
@@ -485,6 +486,171 @@ p{margin:0}
   margin-top:40px;font-size:13px;letter-spacing:.04em;
   color:var(--invert-muted);
 }
+
+/* ---------- action cards — a button that can carry a second line ---------- */
+
+.actions{display:flex;flex-wrap:wrap;gap:0;margin-top:40px;border-top:1px solid var(--rule)}
+.action{
+  display:flex;align-items:flex-start;gap:16px;
+  flex:1 1 240px;min-width:0;
+  padding:22px 24px 22px 0;
+  border-bottom:1px solid var(--rule);
+  text-decoration:none;color:var(--ink);
+  transition:background-color .16s linear;
+}
+.action + .action{padding-left:24px;border-left:1px solid var(--rule)}
+.action:hover{background:var(--panel)}
+.action-mark{flex:none;width:26px;height:26px;margin-top:2px;color:var(--accent)}
+.action-title{
+  font-family:var(--sans);font-size:15px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;display:block;
+}
+.action-sub{
+  display:block;margin-top:6px;font-size:14.5px;line-height:1.4;color:var(--muted);
+}
+.action:hover .action-title{color:var(--accent)}
+.action-go{margin-left:auto;align-self:center;width:18px;height:8px;flex:none;color:var(--muted)}
+.action:hover .action-go{color:var(--accent)}
+@media (max-width:560px){
+  .action + .action{padding-left:0;border-left:0}
+  .action{flex-basis:100%}
+}
+
+.quiet-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:22px}
+.quiet-links a{
+  font-size:14.5px;letter-spacing:.03em;color:var(--muted);text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.quiet-links a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* ---------- chart instrument: hover readout + replay ---------- */
+
+.chart-foot{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:24px;margin-top:20px;
+}
+.chart-foot .source{margin:0;max-width:46ch}
+.replay{
+  flex:none;font-family:var(--sans);font-size:13px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);background:none;
+  border:1px solid var(--rule);border-radius:0;padding:7px 12px;cursor:pointer;
+  transition:color .16s linear,border-color .16s linear;
+}
+.replay:hover{color:var(--ink);border-color:var(--rule-strong)}
+
+.wui-hit{fill:transparent;cursor:crosshair}
+.wui-scrub{stroke:var(--rule-strong);stroke-width:1;opacity:0}
+.wui-cursor{fill:var(--accent);opacity:0}
+.chart.is-reading .wui-scrub,.chart.is-reading .wui-cursor{opacity:1}
+.wui-readout{
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  letter-spacing:.03em;fill:var(--ink);opacity:0;
+}
+.chart.is-reading .wui-readout{opacity:1}
+.chart.is-reading .wui-event{opacity:.28}
+
+/* ---------- scroll cue ---------- */
+
+.scroll-cue{
+  display:flex;align-items:center;gap:12px;justify-content:center;
+  margin-top:clamp(40px,6vw,72px);
+  font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+}
+.scroll-cue:hover{color:var(--ink)}
+.scroll-cue svg{width:10px;height:22px}
+@media (prefers-reduced-motion:no-preference){
+  .scroll-cue svg{animation:nudge 2.4s ease-in-out infinite}
+}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ---------- paged section: tab strip, counter, pager ---------- */
+
+.pager-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;margin-bottom:28px;
+}
+.counter{
+  font-family:var(--sans);font-size:13px;letter-spacing:.14em;
+  color:var(--muted);font-variant-numeric:tabular-nums;flex:none;
+}
+.tabs{
+  display:flex;gap:0;overflow-x:auto;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin-bottom:48px;scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;background:none;border:0;border-radius:0;cursor:pointer;
+  font-family:var(--sans);font-size:13.5px;font-weight:500;letter-spacing:.04em;
+  color:var(--muted);padding:14px 22px;white-space:nowrap;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:color .16s linear,border-color .16s linear;
+}
+.tab:first-child{padding-left:0}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+
+.panel[hidden]{display:none}
+.panel-grid{
+  display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+  gap:clamp(32px,5vw,64px);align-items:start;
+}
+@media (max-width:860px){.panel-grid{grid-template-columns:minmax(0,1fr);gap:40px}}
+.panel-eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.panel h3{
+  font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.1rem);
+  line-height:1.15;margin:0 0 16px;
+}
+.panel-body{font-size:16.5px;line-height:1.55;color:var(--muted);max-width:52ch}
+
+.figs{display:flex;flex-wrap:wrap;gap:0;margin-top:32px;border-top:2px solid var(--ink)}
+.fig{flex:1 1 150px;min-width:0;padding:20px 24px 0 0}
+.fig + .fig{padding-left:24px;border-left:1px solid var(--rule)}
+.fig-n{
+  font-family:var(--display);font-size:clamp(2rem,3.4vw,2.9rem);
+  line-height:1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;
+}
+.fig--accent .fig-n{color:var(--accent)}
+.fig-l{margin-top:10px;font-size:13.5px;line-height:1.35;color:var(--muted)}
+
+.pager{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
+}
+.pager button{
+  background:none;border:0;border-radius:0;cursor:pointer;padding:6px 0;
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);
+}
+.pager button:hover{color:var(--accent)}
+.pager .upnext{font-size:14px;color:var(--muted);text-align:center;flex:1;min-width:0}
+.pager .upnext b{font-weight:500;color:var(--ink)}
+
+/* ---------- founder wisdom ---------- */
+
+.fw-list{display:flex;flex-direction:column}
+.fw{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);
+  gap:clamp(20px,4vw,56px);
+  padding-block:28px;border-top:1px solid var(--rule);
+  align-items:start;text-decoration:none;color:var(--ink);
+}
+.fw:last-child{border-bottom:1px solid var(--rule)}
+.fw:hover{background:var(--panel)}
+.fw-t{font-family:var(--display);font-size:1.3rem;line-height:1.2;margin:0}
+.fw:hover .fw-t{color:var(--accent)}
+.fw-by{margin-top:8px;font-size:13.5px;letter-spacing:.03em;color:var(--muted)}
+.fw-take{font-size:16px;line-height:1.5;color:var(--muted);margin:0}
+.fw-tag{
+  display:inline-block;margin-top:12px;font-size:11px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--rule-strong);padding:4px 9px;
+}
+@media (max-width:700px){.fw{grid-template-columns:minmax(0,1fr);gap:12px}}
 </style>
 
 <a class="skip" href="#main">Skip to content</a>
@@ -494,6 +660,7 @@ p{margin:0}
     <a class="mark" href="#top"><span class="at">@</span>profjulien.ai</a>
     <nav class="nav" aria-label="Primary">
       <a href="#teaching">Teaching</a>
+      <a href="#programmes">Programmes</a>
       <a href="#arc">Track record</a>
       <a href="#together">Working together</a>
       <a class="nav-cta" href="https://calendly.com/profjulien/officehour">Book an office hour</a>
@@ -514,14 +681,28 @@ p{margin:0}
             Innovation at ESSEC Business School in Singapore.</p>
           <p>Former VC and serial tech company founder.</p>
         </div>
-        <div class="btn-row" style="margin-top:40px">
-          <a class="btn btn--solid" href="https://calendly.com/profjulien/officehour">
-            Book an office hour
-            <svg class="arrow" viewBox="0 0 18 8" aria-hidden="true" fill="none">
-              <path d="M0 4h16M12.5 1 16 4l-3.5 3" stroke="currentColor" stroke-width="1.5"/>
+        <div class="actions">
+          <a class="action" href="https://calendly.com/profjulien/officehour">
+            <svg class="action-mark" viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="5" width="20" height="18"/><path d="M3 11h20M9 2v5M17 2v5"/>
             </svg>
+            <span><span class="action-title">Book an office hour</span>
+              <span class="action-sub">Thirty minutes sharp. Bring the problem.</span></span>
+            <svg class="action-go" viewBox="0 0 18 8" aria-hidden="true" fill="none"><path d="M0 4h16M12.5 1 16 4l-3.5 3" stroke="currentColor" stroke-width="1.5"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#teaching">What I teach</a>
+          <a class="action" href="#programmes">
+            <svg class="action-mark" viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 21V9l10-6 10 6v12"/><path d="M3 21h20M10 21v-7h6v7"/>
+            </svg>
+            <span><span class="action-title">What I run</span>
+              <span class="action-sub">Accelerators, an institute, an incubator.</span></span>
+            <svg class="action-go" viewBox="0 0 18 8" aria-hidden="true" fill="none"><path d="M0 4h16M12.5 1 16 4l-3.5 3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+        </div>
+        <div class="quiet-links">
+          <a href="mailto:hello@profjulien.ai">hello@profjulien.ai &#8599;</a>
+          <a href="https://www.linkedin.com/in/profjulien">LinkedIn &#8599;</a>
+          <a href="#teaching">What I teach &#8595;</a>
         </div>
       </div>
 
@@ -544,13 +725,26 @@ p{margin:0}
             </g>
             <text class="wui-year" x="0" y="344">2008</text>
             <text class="wui-year" x="720" y="344" text-anchor="end">2026</text>
+            <line class="wui-scrub" x1="0" y1="18" x2="0" y2="316"></line>
+            <circle class="wui-cursor" cx="0" cy="0" r="5"></circle>
+            <text class="wui-readout" x="0" y="0"></text>
+            <rect class="wui-hit" x="0" y="0" width="720" height="316"></rect>
           </g>
         </svg>
-        <figcaption class="source">
-          World Uncertainty Index, 2008–2026.
-          <br>Source: worlduncertaintyindex.com — monthly, GDP-weighted, to July 2026.
+        <figcaption class="chart-foot">
+          <span class="source">World Uncertainty Index, 2008–2026. Hover to read a month.
+            <br>Source: worlduncertaintyindex.com — monthly, GDP-weighted, to July 2026.</span>
+          <button class="replay" type="button">Replay &#8635;</button>
         </figcaption>
       </figure>
+    </div>
+    <div class="wrap">
+      <a class="scroll-cue" href="#thesis">
+        Scroll
+        <svg viewBox="0 0 10 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 0v19M1 15l4 5 4-5"/>
+        </svg>
+      </a>
     </div>
   </section>
 
@@ -618,6 +812,93 @@ p{margin:0}
           </ul>
           <p class="col-where"><span>EMBA</span><span>Executive</span></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PROGRAMMES — paged: tab strip, counter, up-next ============ -->
+  <section class="band" id="programmes">
+    <div class="wrap">
+      <div class="pager-head">
+        <div class="stack g2">
+          <p class="eyebrow">What I run</p>
+          <h2>Where the teaching gets tested.</h2>
+        </div>
+        <p class="counter" data-counter>01 / 04</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Programmes">
+        <button class="tab" role="tab" aria-selected="true"  aria-controls="pr-0" id="tb-0">Accélérateur Asie</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="pr-1" id="tb-1">ESSEC Spark APAC</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="pr-2" id="tb-2">E&amp;I Institute</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="pr-3" id="tb-3">ESSEC Ventures APAC</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pr-0" aria-labelledby="tb-0">
+        <div class="panel-grid">
+          <div>
+            <p class="panel-eyebrow">Bpifrance &times; ESSEC &nbsp;·&nbsp; Directeur pédagogique</p>
+            <h3>Accélérateur Asie</h3>
+          </div>
+          <div>
+            <p class="panel-body">A Bpifrance accelerator built for French companies scaling into
+              Asia. I own the pedagogy: what gets taught, in what order, and how a founder is
+              expected to have changed by the end of it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pr-1" aria-labelledby="tb-1" hidden>
+        <div class="panel-grid">
+          <div>
+            <p class="panel-eyebrow">ESSEC alumni, Asia-Pacific</p>
+            <h3>ESSEC Spark APAC</h3>
+          </div>
+          <div>
+            <p class="panel-body">A validation sprint that earns you a place in a build-and-launch
+              phase, open to ESSEC alumni across the region. Phase one kills the ideas that cannot
+              survive contact with a customer. Phase two takes the survivors to market.</p>
+            <div class="figs">
+              <div class="fig fig--accent"><p class="fig-n">16</p><p class="fig-l">weeks, validation to launch</p></div>
+              <div class="fig"><p class="fig-n">2</p><p class="fig-l">phases, the second one selective</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pr-2" aria-labelledby="tb-2" hidden>
+        <div class="panel-grid">
+          <div>
+            <p class="panel-eyebrow">ESSEC Business School &nbsp;·&nbsp; Director</p>
+            <h3>Entrepreneurship &amp; Innovation Institute</h3>
+          </div>
+          <div>
+            <p class="panel-body">Strategy, faculty, partnerships and research output for the
+              institute. The place where what works in one classroom becomes something the
+              school can run at scale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pr-3" aria-labelledby="tb-3" hidden>
+        <div class="panel-grid">
+          <div>
+            <p class="panel-eyebrow">Student incubator &nbsp;·&nbsp; Director</p>
+            <h3>ESSEC Ventures APAC</h3>
+          </div>
+          <div>
+            <p class="panel-body">The incubator for students building in the Asia-Pacific region.
+              Selection, mentoring, and the unglamorous work of keeping a company alive between
+              one milestone and the next.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pager">
+        <button type="button" data-prev>&#8592; Previous</button>
+        <p class="upnext">Up next: <b data-upnext>ESSEC Spark APAC</b></p>
+        <button type="button" data-next>Next &#8594;</button>
       </div>
     </div>
   </section>
@@ -729,33 +1010,93 @@ p{margin:0}
     </div>
   </section>
 
-  <!-- ============ WRITING — honest empty state, the shelf before the books ============ -->
-  <!-- HIDDEN until the first piece is published. To bring it back: delete the
-       hidden attribute below and restore <a href="#writing">Writing</a> to the nav. -->
-  <section class="band" id="writing" hidden>
+  <!-- ============ FOUNDER WISDOM — curation, linked out; no borrowed prose ============ -->
+  <section class="band" id="founder-wisdom">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Writing</p>
-        <h2>Notes, when they're ready.</h2>
-        <p class="lede muted">Short pieces on entrepreneurship, leadership, and what AI actually
-          changes. The first ones land here.</p>
-        <p class="lede">Until then it goes out on
-          <a class="inline-link" href="https://www.linkedin.com/in/profjulien">LinkedIn</a>.</p>
+      <div class="pager-head">
+        <div class="stack g2">
+          <p class="eyebrow">Founder wisdom</p>
+          <h2>What I send people, and why.</h2>
+        </div>
+        <p class="counter">Life &nbsp;·&nbsp; 7 of a growing shelf</p>
       </div>
+      <p class="lede muted" style="margin-bottom:40px">A running collection of essays and talks
+        worth the hour, each with the one line I would actually say about it. Every link goes to
+        the original, where the author gets the read.</p>
 
-      <div class="slots">
-        <div class="slot">
-          <span class="slot-chip">Soon</span>
-          <p class="slot-topic">On deciding with the facts you already have</p>
-        </div>
-        <div class="slot">
-          <span class="slot-chip">Soon</span>
-          <p class="slot-topic">What a VC reads behind the deck</p>
-        </div>
-        <div class="slot">
-          <span class="slot-chip">Soon</span>
-          <p class="slot-topic">The week an AI-native team outgrows the meeting</p>
-        </div>
+      <div class="fw-list">
+        <a class="fw" href="https://paulgraham.com/think.html">
+          <div>
+            <p class="fw-t">How to think for yourself</p>
+            <p class="fw-by">Paul Graham &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Independent thinking</span>
+          </div>
+          <p class="fw-take">In most work it is enough to be right. In founding, investing and
+            research you have to be right where everyone else is wrong — so the thing to train
+            is independent-mindedness, not accuracy.</p>
+        </a>
+
+        <a class="fw" href="https://medium.com/incerto/how-to-legally-own-another-person-4145a1802bf6">
+          <div>
+            <p class="fw-t">How to legally own another person</p>
+            <p class="fw-by">Nassim Nicholas Taleb &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Freedom</span>
+          </div>
+          <p class="fw-take">Organisations buy loyalty by giving people something to lose. The
+            freest person in the room is the one whose wants are small enough that the threat
+            never lands.</p>
+        </a>
+
+        <a class="fw" href="https://philosophyinhell.substack.com/p/instead-of-your-lifes-purpose/">
+          <div>
+            <p class="fw-t">Instead of your life's purpose</p>
+            <p class="fw-by">Philosophy in Hell &nbsp;·&nbsp; essay</p>
+            <span class="fw-tag">Meaning</span>
+          </div>
+          <p class="fw-take">Stop hunting the one purpose. Build a portfolio of meaning and the
+            virtues to recognise a high-leverage moment, because most minutes are ordinary and
+            a few are priceless.</p>
+        </a>
+
+        <a class="fw" href="https://youtu.be/aWhNQjW6Luk?t=4353">
+          <div>
+            <p class="fw-t">Life is a paradox to be experienced</p>
+            <p class="fw-by">Derek Sivers &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Paradox</span>
+          </div>
+          <p class="fw-take">Stability and novelty are both real needs. Asking which one is
+            correct is the mistake — the work is holding them in tension.</p>
+        </a>
+
+        <a class="fw" href="https://www.youtube.com/watch?v=A98s9CqUM0w">
+          <div>
+            <p class="fw-t">The art of transformation</p>
+            <p class="fw-by">Rich Roll &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Change</span>
+          </div>
+          <p class="fw-take">Transformation runs neither straight nor logical. It is a dance
+            between deciding and being changed by what the decision costs.</p>
+        </a>
+
+        <a class="fw" href="https://www.youtube.com/watch?v=6aTaoGWjMvI">
+          <div>
+            <p class="fw-t">The "good enough" life choice</p>
+            <p class="fw-by">Derek Sivers &nbsp;·&nbsp; talk</p>
+            <span class="fw-tag">Choice</span>
+          </div>
+          <p class="fw-take">Life is choice. Good enough, chosen on purpose, beats optimal
+            chosen never.</p>
+        </a>
+
+        <a class="fw" href="https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness">
+          <div>
+            <p class="fw-t">What makes a good life?</p>
+            <p class="fw-by">Robert Waldinger &nbsp;·&nbsp; TED</p>
+            <span class="fw-tag">Relationships</span>
+          </div>
+          <p class="fw-take">The longest study on happiness lands on one variable: the quality
+            of your relationships. Not achievement, not money.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -775,3 +1116,98 @@ p{margin:0}
     <p class="foot-fine">Julien Salanave — ESSEC Business School, Singapore.</p>
   </div>
 </footer>
+
+<script>
+(() => {
+  "use strict";
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- chart: replay, and scrub to read a month ---- */
+  const fig = document.querySelector(".chart");
+  if (fig) {
+    const line = fig.querySelector(".wui-line");
+    fig.querySelector(".replay")?.addEventListener("click", () => {
+      if (!line) return;
+      line.style.animation = "none";
+      void line.getBBox();
+      line.style.animation = "";
+      fig.querySelector(".wui-event")?.animate(
+        [{opacity: 0}, {opacity: 0}, {opacity: 1}],
+        {duration: 2400, easing: "linear"}
+      );
+    });
+
+    const V = [17245,16059,11945,14278,14969,16456,9904,12619,13118,15511,16251,11388,11773,15088,20402,16736,16066,17882,12265,14420,13766,19294,20780,19363,23146,29662,19563,23613,22580,23197,20536,32177,20656,27172,13967,14303,15449,14261,12549,10859,14147,12621,16854,15732,18687,22334,18311,17927,18402,18512,18355,15813,14610,36237,33079,35269,24828,20311,30969,39555,30949,20087,31259,20387,14387,13790,15417,14159,15449,21718,12641,17539,21843,21788,19226,13590,17282,19740,20342,13935,14068,14333,25064,17022,25444,29457,29701,22530,21804,25042,26690,22015,20895,25573,21317,16846,18499,20446,22192,15032,21466,17424,45973,44084,28374,18583,26744,30556,38065,34722,28585,22038,20301,15384,16915,21568,15469,20376,20821,27945,21420,17493,12198,12920,19883,25859,22118,30927,27915,22779,18793,26231,36382,51179,35809,27628,57518,41086,22822,33126,32221,39475,39040,52683,42259,39762,56224,21439,26491,28738,26888,20430,26410,28195,25062,14886,11957,9050,13602,14890,15393,21543,19371,17170,23904,10478,14557,28226,25577,25213,27257,41669,25064,23023,19588,31578,22560,28963,34628,17406,29340,32028,17736,37639,37309,17679,15649,22258,16389,15354,17279,17109,17866,16358,17274,16746,15083,14606,15930,21425,20372,21669,24333,30376,41383,48816,53190,72733,77998,84305,95509,105558,122422,110332,91875,90758,79904,83845,85122,83569,80024,75202,71538];
+    const hit = fig.querySelector(".wui-hit"),
+          scrub = fig.querySelector(".wui-scrub"),
+          cur = fig.querySelector(".wui-cursor"),
+          out = fig.querySelector(".wui-readout");
+    if (hit && scrub && cur && out) {
+      const N = V.length, W = 720, TOP = 18, BOT = 300;
+      const lo = Math.min(...V), hi = Math.max(...V);
+      const yOf = v => BOT - (v - lo) / (hi - lo) * (BOT - TOP);
+      const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      const svg = fig.querySelector("svg");
+      const read = e => {
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX; pt.y = e.clientY;
+        const loc = pt.matrixTransform(hit.getScreenCTM().inverse());
+        let i = Math.round(loc.x / W * (N - 1));
+        i = Math.max(0, Math.min(N - 1, i));
+        const x = i * W / (N - 1), y = yOf(V[i]);
+        scrub.setAttribute("x1", x); scrub.setAttribute("x2", x);
+        cur.setAttribute("cx", x); cur.setAttribute("cy", y);
+        const flip = x > W - 150;
+        out.setAttribute("x", flip ? x - 10 : x + 10);
+        out.setAttribute("y", Math.max(28, y - 14));
+        out.setAttribute("text-anchor", flip ? "end" : "start");
+        out.textContent = MON[i % 12] + " " + (2008 + Math.floor(i / 12)) + "  ·  " +
+                          V[i].toLocaleString("en-GB");
+        fig.classList.add("is-reading");
+      };
+      hit.addEventListener("pointermove", read);
+      hit.addEventListener("pointerleave", () => fig.classList.remove("is-reading"));
+    }
+  }
+
+  /* ---- programmes: tabs, counter, up-next ---- */
+  const sec = document.getElementById("programmes");
+  if (sec) {
+    const tabs = [...sec.querySelectorAll(".tab")],
+          panels = [...sec.querySelectorAll(".panel")],
+          counter = sec.querySelector("[data-counter]"),
+          upnext = sec.querySelector("[data-upnext]");
+    const pad = n => String(n).padStart(2, "0");
+    let at = 0;
+    const show = i => {
+      at = (i + tabs.length) % tabs.length;
+      tabs.forEach((t, k) => t.setAttribute("aria-selected", k === at));
+      panels.forEach((pl, k) => pl.hidden = k !== at);
+      counter.textContent = pad(at + 1) + " / " + pad(tabs.length);
+      upnext.textContent = tabs[(at + 1) % tabs.length].textContent;
+    };
+    tabs.forEach((t, i) => t.addEventListener("click", () => show(i)));
+    sec.querySelector("[data-next]").addEventListener("click", () => show(at + 1));
+    sec.querySelector("[data-prev]").addEventListener("click", () => show(at - 1));
+    sec.querySelector(".tabs").addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") { show(at + 1); tabs[at].focus(); }
+      if (e.key === "ArrowLeft")  { show(at - 1); tabs[at].focus(); }
+    });
+    show(0);
+  }
+
+  /* ---- nav: mark the section you are in ---- */
+  const links = [...document.querySelectorAll(".nav a[href^='#']")];
+  const targets = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  if (targets.length && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(a => a.classList.toggle(
+          "is-here", a.getAttribute("href") === "#" + en.target.id));
+      });
+    }, {rootMargin: "-45% 0px -50% 0px"});
+    targets.forEach(t => io.observe(t));
+  }
+})();
+</script>
