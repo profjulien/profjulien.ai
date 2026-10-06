@@ -1,0 +1,365 @@
+{
+ "collection": "Founder wisdom",
+ "note": "System of record for profjulien.ai/founder-wisdom.html. Edit this file, then run build.py.",
+ "theme_order": [
+  "Considering",
+  "Getting started",
+  "Struggling",
+  "Iterating",
+  "PMF",
+  "Scaling",
+  "Success",
+  "Career",
+  "Life",
+  "Luck",
+  "Decision-making",
+  "Tools"
+ ],
+ "theme_labels": {
+  "Getting started": "Starting",
+  "PMF": "Product–market fit",
+  "Luck": "Skill vs. luck"
+ },
+ "entries": [
+  {
+   "title": "How to think for yourself",
+   "author": "Paul Graham",
+   "url": "https://paulgraham.com/think.html",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "In most work it is enough to be right. In founding, investing and research you have to be right where everyone else is wrong, so the thing to train is independent-mindedness, not accuracy.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "How to legally own another person",
+   "author": "Nassim Nicholas Taleb",
+   "url": "https://medium.com/incerto/how-to-legally-own-another-person-4145a1802bf6",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "“The three most harmful addictions are heroin, carbohydrates, and a monthly salary.” — Taleb’s line, and the whole argument in one sentence.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "The many worlds of enough",
+   "author": "",
+   "url": "",
+   "themes": [
+    "Success"
+   ],
+   "tldr": "On the interplay between ambition, greed, settling for enough and self awareness. Settling for enough is elusive because when we reach a certain enough, we are no longer the person that once desired it.  Ambition to become a better person has pushed us to evolve our identity and moved the goal post of enough upwards. Byproducts we also get from that process are bumps in salary, status, power or reputation. Once these byproducts become our primary desires, ambition turns to greed and it's time for course correction towards a lower enough though increased self awareness.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "The minimum viable testing process for evaluating startup ideas",
+   "author": "First Round Review",
+   "url": "https://review.firstround.com/the-minimum-viable-testing-process-for-evaluating-startup-ideas",
+   "themes": [
+    "Iterating"
+   ],
+   "tldr": "Instead of throwing out a MVP as soon as possible to see what sticks, start by testing critical assumptions",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "What is −1 to 0? A philosophy of ideation",
+   "author": "South Park Commons",
+   "url": "https://blog.southparkcommons.com/what-is-negative-1-to-0/",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "Before zero to one there is minus one to zero: the unglamorous search for a problem worth committing to. Conviction and certainty are not the same thing.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Systems thinking and education",
+   "author": "Russell Ackoff",
+   "url": "",
+   "themes": [
+    "Decision-making"
+   ],
+   "tldr": "Education improves by changing the system, not by polishing its parts. Doing the wrong thing better only takes you further from right.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Instead of your life’s purpose",
+   "author": "Philosophy in Hell",
+   "url": "https://philosophyinhell.substack.com/p/instead-of-your-lifes-purpose/",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "There is a common misperception of what makes life meaningful.  It is the idea that we have a special purpose in life – and that once we find it, all our confusion ends...An alternate non-linear approach is premised on the idea that life is full of randomness punctuated by sudden moments – crises and opportunities – with vast potential for meaning making, when our skills and virtues shine.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Readwise",
+   "author": "",
+   "url": "https://readwise.io/i/julien621",
+   "themes": [
+    "Tools"
+   ],
+   "tldr": "To compound knowledge from what you read, you need a process. Readwise works because it simplifies how you capture your reading highlights from ANY source and delivers spaced repetition of those highlights so you remember them",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "The idea maze",
+   "author": "Chris Dixon",
+   "url": "https://cdixon.org/2013/08/04/the-idea-maze",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "A good idea is a map of every turn the market has already punished. The founder worth backing has walked the maze and knows which doors are shut.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Finding product market fit",
+   "author": "Lenny Rachitsky",
+   "url": "https://www.lennysnewsletter.com/p/finding-product-market-fit",
+   "themes": [
+    "PMF"
+   ],
+   "tldr": "Product-market fit is felt before it is measured. The signal is pull you cannot keep up with, not a metric you have to squint at.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "How to do great work",
+   "author": "Paul Graham",
+   "url": "http://www.paulgraham.com/greatwork.html",
+   "themes": [
+    "Career"
+   ],
+   "tldr": "Paul Graham’s essay argues that “great work” is neither accidental nor the result of step-by-step career planning. It emerges when you combine aptitude with deep personal fascination and chase the intriguing gaps at the frontiers of knowledge. Curiosity is the engine, hard focused effort is the fuel, and a readiness to ignore fashion, break implicit rules, and keep iterating small versions is the method. The sooner you treat learning as your own project—not a syllabus handed down—the faster you’ll reach those frontiers and notice questions no one else has asked",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "What product market fit looks like",
+   "author": "",
+   "url": "https://youtu.be/BjVGaq0h8vA?si=TKvGI1O2Z9mdtvt8&t=949",
+   "themes": [
+    "PMF"
+   ],
+   "tldr": "Coinbase example",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Success is boring",
+   "author": "",
+   "url": "https://youtu.be/RdAKXJlMIZM?t=1845",
+   "themes": [
+    "Success"
+   ],
+   "tldr": "We entered into entrepreneurship by jumping into the next thing. But this lesson we then need to unlearn to focus and stick on what we’re doing",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Facebook early adoption",
+   "author": "",
+   "url": "https://youtu.be/--APdD6vejI?t=237",
+   "themes": [
+    "Getting started"
+   ],
+   "tldr": "Some very successful founders are not born ambitious, they build it over time. See the Mark Zuckerberg example",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Life is a paradox to be experienced",
+   "author": "Derek Sivers",
+   "url": "https://youtu.be/aWhNQjW6Luk?t=4353",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "Derek Sivers argues Life is full of inherent tensions that can take us in opposing directions (e.g. safety vs. novelty). It can be navigated more smoothly by reframing either/or as both/and. Your life becomes a symphony if you make room and time for each of these conflicting forces rather  try to pick one while suppressing the other.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "The art of transformation",
+   "author": "Rich Roll",
+   "url": "https://www.youtube.com/watch?v=A98s9CqUM0w",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "Transformation runs neither straight nor logical. It is a dance between deciding and being changed by what the decision costs.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "You’re not a lottery ticket",
+   "author": "Peter Thiel",
+   "url": "https://www.youtube.com/watch?v=iZM_JmZdqCw",
+   "themes": [
+    "Luck"
+   ],
+   "tldr": "The role of luck in entrepreneurial and life success is overrated. We can build a startup/ life where we construct the future and good/bad luck is something we deal with along the way (i.e. a determinate future) rather than a world where luck stops all thinking and action before we even start",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "100 happy users",
+   "author": "",
+   "url": "https://youtu.be/YHc6dAPXOgM?t=966",
+   "themes": [
+    "Getting started"
+   ],
+   "tldr": "Build something 100 happy users can’t do without rather than something that a large number of people vaguely enjoy",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "The “good enough” life choice",
+   "author": "Derek Sivers",
+   "url": "https://www.youtube.com/watch?v=6aTaoGWjMvI",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "Life is choice. Good enough, chosen on purpose, beats optimal chosen never.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "The nothing to lose advantage",
+   "author": "",
+   "url": "https://youtu.be/JuNOFW-oVn8?t=49",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "When you start, you have nothing to lose, can take more risks and execute faster. What then prevents people from starting? While they objectively have nothing to lose, they subjectively fear what their mum/friend/colleague are going to think about them in the future if they fail.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Four stages of business growth",
+   "author": "Alex Hormozi",
+   "url": "https://www.google.com/search?q=alex+homozi+4+stages+of+business&oq=alex+homozi+4+stages+of+business&aqs=chrome..69i57j33i10i160l3.8940j0j7&sourceid=chrome&ie=UTF-8#:~:text=The%204%20Stages,13%20avr.%202021",
+   "themes": [
+    "Scaling"
+   ],
+   "tldr": "Each stage has distinct challenge",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "How to know if a startup idea is good",
+   "author": "Marc Andreessen",
+   "url": "https://youtu.be/Lp619Sl38eo?t=2816",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "Most of the obviously good ideas are bad ideas for startups because large companies are already pursuing them. A good idea for a startup has to be contrarian, non obvious, yet right.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "How to get startup ideas",
+   "author": "Paul Graham",
+   "url": "http://paulgraham.com/startupideas.html",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "The way to get good startup ideas is to look for a problem , preferably that you have yourself, and that is not obvious to people who don’t have it",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Choice and procrastination",
+   "author": "Ted O’Donoghue & Matthew Rabin",
+   "url": "https://econwpa.ub.uni-muenchen.de/econ-wp/mic/papers/0012/0012002.pdf",
+   "themes": [
+    "Decision-making"
+   ],
+   "tldr": "More options make a decision costlier, so we defer it. Procrastination is often a symptom of too much choice rather than too little will.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Wartime vs. peacetime CEO",
+   "author": "Ben Horowitz",
+   "url": "https://youtu.be/kWnKLUesjV4",
+   "themes": [
+    "Scaling"
+   ],
+   "tldr": "Peacetime grows the opportunity, wartime survives the threat. The same person has to be able to switch, and most cannot.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Did Elon Musk get lucky? Skill, luck and imitation",
+   "author": "Luca Dellanna",
+   "url": "https://www.luca-dellanna.com/musk-luck/",
+   "themes": [
+    "Luck"
+   ],
+   "tldr": "The skill-luck tradeoff for outcomes: if you don’t take extreme risks, even if you’re the most skilled person, you will be outperformed by someone who did. And if you take extreme risks, you will have worse average outcomes than if you didn’t (competing for the first place often means using strategies that reduce your average outcome).",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "What makes a good life?",
+   "author": "Robert Waldinger",
+   "url": "https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness",
+   "themes": [
+    "Life"
+   ],
+   "tldr": "The longest study on happiness lands on one variable: the quality of your relationships. Not achievement, not money.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "Competition is for losers",
+   "author": "Peter Thiel",
+   "url": "https://youtu.be/3Fx5Q8xGU8k?si=gPSl7v9txMthjQOV&t=2224",
+   "themes": [
+    "Career"
+   ],
+   "tldr": "We seek competition (in education, startups, sports…) for  validation because we are mimetic yet our success in business, career & life depends on avoiding competition",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "How not to die",
+   "author": "Paul Graham",
+   "url": "http://www.paulgraham.com/die.html",
+   "themes": [
+    "Struggling"
+   ],
+   "tldr": "Startups mostly die when the founders give up. Survive long enough and the odds turn in your favour.",
+   "tldr_by": "claude"
+  },
+  {
+   "title": "How to win?",
+   "author": "Daniel Gross",
+   "url": "https://youtu.be/LH1bewTg-P4",
+   "themes": [
+    "Career"
+   ],
+   "tldr": "What lifestyle do you need to sustain being an efficient founder, i.e. work hard AND smart?",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Don’t follow your passion",
+   "author": "Ben Horowitz",
+   "url": "https://youtu.be/uaSqh4DiQSw?t=507",
+   "themes": [
+    "Career"
+   ],
+   "tldr": "Why following your passion is not the best compass for figuring out your career. Passions are difficult to prioritize, passions evolve over time, passions are not necessarily where you are most skilled, passions are very me-centric. Follow your contribution instead.",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Before the startup",
+   "author": "Paul Graham",
+   "url": "http://www.paulgraham.com/before.html",
+   "themes": [
+    "Considering"
+   ],
+   "tldr": "You shouldn’t know a lot about startups in order to start one, gaming the system won’t work, it will consume all your life especially if you’re successful, you shouldn’t start one during college, you can’t tell who is going to be successful at it",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "How to manage a startup?",
+   "author": "",
+   "url": "https://youtu.be/j7tr3IlH5Ro",
+   "themes": [
+    "Scaling"
+   ],
+   "tldr": "Especially from 26:32, the story of Toussaint L’Ouverture and his management style (he conquered the enemy by incorporating them into his army) and the implications for building a company culture (it’s not your perspective or the perspective of the person you are talking to at the moment that matters. You must consider the people who are in the room, they are the company, they are the culture)",
+   "tldr_by": "julien"
+  },
+  {
+   "title": "Guide to career planning",
+   "author": "Marc Andreessen",
+   "url": "https://fictivekin.github.io/pmarchive-jekyll//guide_to_career_planning_part1.html",
+   "themes": [
+    "Career"
+   ],
+   "tldr": "First rule of career planning: do not plan your career.  Focus instead on creating a portfolio of opportunities.",
+   "tldr_by": "julien"
+  }
+ ]
+}
