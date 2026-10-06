@@ -360,6 +360,16 @@
    ],
    "tldr": "First rule of career planning: do not plan your career.  Focus instead on creating a portfolio of opportunities.",
    "tldr_by": "julien"
+  },
+  {
+   "title": "Launching Airbnb and the challenges of scale",
+   "author": "Brian Chesky",
+   "url": "https://youtu.be/W608u6sBFpo?t=1340",
+   "themes": [
+    "PMF"
+   ],
+   "tldr": "The hundred happy users rule, in practice. Chesky on earning Airbnb’s first users by hand, and why that unscalable start is what told them what was worth scaling.",
+   "tldr_by": "claude"
   }
  ]
 }
