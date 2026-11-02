@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First weeks as a new leader — Prof Julien Salanave</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://profjulien.ai/first-weeks/">
+<meta name="description" content="For new team leads in their first weeks: a 30-minute conversation with Julien Salanave.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pine: #16332D;
+    --limestone: #F2EDE3;
+    --limestone-deep: #E7E0D2;
+    --warm-grey: #A9A296;
+    --muted: #5E5A52;
+    --plum: #6B4E7D;
+    --on-accent: #F2EDE3;
+    --bg: var(--limestone);
+    --panel: var(--limestone-deep);
+    --text: var(--pine);
+    --rule: var(--warm-grey);
+    --accent: var(--plum);
+    --display: "Newsreader", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: "Outfit", "Century Gothic", Futura, Corbel, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10241F;
+      --panel: #16332D;
+      --text: #F2EDE3;
+      --muted: #C9C2B5;
+      --rule: #5E6B64;
+      --accent: #C3A6D4;
+      --on-accent: #10241F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10241F;
+    --panel: #16332D;
+    --text: #F2EDE3;
+    --muted: #C9C2B5;
+    --rule: #5E6B64;
+    --accent: #C3A6D4;
+    --on-accent: #10241F;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  header.hero { padding: 88px 0 64px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 24px;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(40px, 7vw, 64px); line-height: 1.04;
+    margin: 0 0 24px; letter-spacing: -.01em;
+  }
+  .rule { width: 120px; height: 2px; background: var(--text); margin: 0 0 24px; }
+  .lede { font-size: 21px; max-width: 34em; margin: 0 0 32px; }
+  .btn {
+    display: inline-block; background: var(--text); color: var(--bg);
+    font-family: var(--sans); font-weight: 500; font-size: 18px;
+    padding: 16px 28px; text-decoration: none; border: 0; border-radius: 0;
+  }
+  .btn:hover, .btn:focus-visible { background: var(--accent); color: var(--bg); }
+  .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+  .small { font-size: 15px; color: var(--muted); margin-top: 16px; }
+  section { padding: 48px 0; border-top: 1px solid var(--rule); }
+  h2 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(28px, 4.5vw, 36px); line-height: 1.12; margin: 0 0 24px;
+  }
+  ol.bites { list-style: none; counter-reset: b; padding: 0; margin: 0; }
+  ol.bites li {
+    counter-increment: b; position: relative; padding: 0 0 24px 56px;
+    font-size: 20px;
+  }
+  ol.bites li::before {
+    content: counter(b); position: absolute; left: 0; top: -6px;
+    font-family: var(--display); font-size: 36px; color: var(--rule); line-height: 1;
+  }
+  .panel { background: var(--panel); padding: 32px; }
+  .panel p { margin: 0 0 16px; }
+  .panel p:last-child { margin: 0; }
+  ul.fit { padding-left: 20px; margin: 0; }
+  ul.fit li { margin-bottom: 8px; }
+  .who { display: grid; gap: 8px; }
+  .who strong { font-weight: 500; }
+  .close { text-align: center; padding: 64px 0 88px; }
+  .close h2 { margin-bottom: 32px; }
+  footer {
+    border-top: 1px solid var(--rule); padding: 24px 0 48px;
+    font-size: 15px; color: var(--muted);
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .wordmark { color: var(--muted); text-decoration: none; }
+  .wordmark span { color: var(--accent); }
+  @media (max-width: 520px) {
+    header.hero { padding: 56px 0 48px; }
+    .lede { font-size: 19px; }
+    ol.bites li { padding-left: 44px; font-size: 18px; }
+    .panel { padding: 24px; }
+    .btn { display: block; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>You've been promoted or appointed to lead a team. Now everyone on it is watching. What will you do first?</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="lede">The first weeks in the leader's seat set a lot in motion: who trusts you, what you change, and how fast. I'm talking with people who are in those weeks right now.</p>
+    <a class="btn" data-ask href="https://calendar.app.google/i2tRBmxkqdYTqVoC6">Book 30 minutes with Julien</a>
+    <p class="small">A video call at a time that suits you. Bring the week you're having.</p>
+  </header>
+
+  <section>
+    <h2>Three things that bite early</h2>
+    <ol class="bites">
+      <li>Listen first, and the team wonders whether anything will change. Decide early, and they wonder whether you listened.</li>
+      <li>Each person on the team needs something different from you, and you have a few one-to-ones to work out what.</li>
+      <li>Some of your former peers will have to work differently. You are the one who tells them.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What happens in the 30 minutes</h2>
+    <div class="panel">
+      <p>You tell me how it's going: what has happened, who you've spoken to, what has been hard. I mostly listen and ask questions.</p>
+      <p>You leave with what others in your position found useful, and a short note on the patterns I'm seeing across these conversations.</p>
+      <p>I'm building a companion for this stretch, called Bearings for now. It turns your real conversations into a clear next move. Before it goes further, I want to hear from the people living it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>This is for you if</h2>
+    <ul class="fit">
+      <li>you were promoted to lead a team in the last few weeks, or you start soon;</li>
+      <li>three or more people report to you;</li>
+      <li>some of them used to be your peers.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Who you'll be talking to</h2>
+    <div class="who">
+      <p><strong>Julien Salanave.</strong> Professor of entrepreneurship. Former founder and venture capitalist. He has taken over teams more than once and still remembers the first month.</p>
+    </div>
+  </section>
+
+  <div class="close">
+    <h2>Tell me about your first weeks.</h2>
+    <a class="btn" data-ask href="https://calendar.app.google/i2tRBmxkqdYTqVoC6">Book 30 minutes with Julien</a>
+    <p class="small">No list and no newsletter. Your booking goes to Julien only.</p>
+  </div>
+
+  <footer>
+    <a class="wordmark" href="/"><span>@</span>profjulien.ai</a>
+    <span>Bearings is a working name.</span>
+  </footer>
+
+</div>
+<script>
+  // Booking page: Google Calendar appointment schedule.
+  var BOOKING_URL = "https://calendar.app.google/i2tRBmxkqdYTqVoC6";
+  var ref = "";
+  try { ref = new URLSearchParams(location.search).get("ref") || ""; } catch (e) {}
+  document.querySelectorAll("[data-ask]").forEach(function (a) {
+    if (BOOKING_URL) {
+      var u = BOOKING_URL;
+      a.href = u;
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+  });
+</script>
+</body>
+</html>
