@@ -43,8 +43,8 @@
   },
   {
    "title": "The many worlds of enough",
-   "author": "",
-   "url": "",
+   "author": "Lawrence Yeo",
+   "url": "https://moretothat.com/the-many-worlds-of-enough/",
    "themes": [
     "Success"
    ],
@@ -79,7 +79,9 @@
     "Decision-making"
    ],
    "tldr": "Education improves by changing the system, not by polishing its parts. Doing the wrong thing better only takes you further from right.",
-   "tldr_by": "claude"
+   "tldr_by": "claude",
+   "draft": true,
+   "draft_reason": "Notion linked kome.ai, a summarising tool. Candidates: youtube.com/watch?v=rCl5XdUAtIY (If Russ Ackoff had given a TED Talk) or watch?v=O9TE9HWFo6U (Systems Thinking, Learning, and Problem Solving). Pick one."
   },
   {
    "title": "Instead of your life’s purpose",
@@ -94,7 +96,7 @@
   {
    "title": "Readwise",
    "author": "",
-   "url": "https://readwise.io/i/julien621",
+   "url": "https://readwise.io",
    "themes": [
     "Tools"
    ],
@@ -138,8 +140,8 @@
    "themes": [
     "PMF"
    ],
-   "tldr": "Coinbase example",
-   "tldr_by": "julien"
+   "tldr": "What fit feels like from the inside: demand arriving faster than you can serve it. Armstrong on the week Coinbase crossed that line.",
+   "tldr_by": "claude"
   },
   {
    "title": "Success is boring",
@@ -224,12 +226,14 @@
   {
    "title": "Four stages of business growth",
    "author": "Alex Hormozi",
-   "url": "https://www.google.com/search?q=alex+homozi+4+stages+of+business&oq=alex+homozi+4+stages+of+business&aqs=chrome..69i57j33i10i160l3.8940j0j7&sourceid=chrome&ie=UTF-8#:~:text=The%204%20Stages,13%20avr.%202021",
+   "url": "",
    "themes": [
     "Scaling"
    ],
    "tldr": "Each stage has distinct challenge",
-   "tldr_by": "julien"
+   "tldr_by": "julien",
+   "draft": true,
+   "draft_reason": "Notion linked a Google search for 'alex homozi 4 stages of business'. Likely his 2021 video 'The 4 Stages of Business Growth' — confirm the URL."
   },
   {
    "title": "How to know if a startup idea is good",

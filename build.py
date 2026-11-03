@@ -7,7 +7,9 @@ import json, html, re, pathlib, sys
 
 HERE = pathlib.Path(__file__).parent
 data = json.loads((HERE / "founder-wisdom.json").read_text(encoding="utf-8"))
-E, ORDER = data["entries"], data["theme_order"]
+ALL, ORDER = data["entries"], data["theme_order"]
+E = [e for e in ALL if not e.get("draft")]          # drafts stay in the JSON, off the page
+HELD = [e for e in ALL if e.get("draft")]
 LABEL = {t: data["theme_labels"].get(t, t) for t in ORDER}
 esc = lambda t: html.escape(t or "", quote=True)
 
@@ -85,5 +87,8 @@ else:
 drafted = [e["title"] for e in E if e.get("tldr_by") == "claude"]
 print(f"built {len(ordered)} entries across {len(counts)} themes")
 if drafted: print(f"  {len(drafted)} TLDRs still flagged tldr_by=claude (unreviewed)")
+for e in HELD:
+    print(f"  held back (draft): {e['title']}")
+    if e.get("draft_reason"): print(f"      {e['draft_reason']}")
 for e in E:
-    if not e["url"]: print(f"  no source link: {e['title']}")
+    if not e["url"]: print(f"  LIVE WITH NO SOURCE LINK: {e['title']}")
